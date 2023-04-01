@@ -27,3 +27,9 @@ Temporary Items
 
 # Node
 node_modules
+
+.env
+
+# Walkthrough videos
+assets/images/*.mp4
+assets/images/*.mov

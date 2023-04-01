@@ -3,11 +3,14 @@
 
 ## Description
 
+I have built a CMS-Style blog site similar to a Wordpress site, where users can publish their blog posts and comment on other users' posts as well. This site was built using the Model-View-Controller (MVC) paradigm in its architectural structure, using Handlebars.js as the template language, Sequelize as the ORM, and the express-session npm package for authentication.
+
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
+- [Deployment](#deployment)
 - [Credits](#credits)
 - [License](#license)
 
@@ -21,7 +24,15 @@
 
 ## Credits
 
-Reset CSS found in Eric A. Meyer's [site](https://meyerweb.com/eric/tools/css/reset/)
+NPM packages used:
+
+- [MySQL2](https://www.npmjs.com/package/mysql2)
+- [Sequelize](https://www.npmjs.com/package/sequelize)
+- [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [Express Session](https://www.npmjs.com/package/express-session)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Connect Session Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 ## License
 

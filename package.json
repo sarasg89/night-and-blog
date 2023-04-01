@@ -1,0 +1,32 @@
+{
+  "name": "night-and-blog",
+  "version": "1.0.0",
+  "description": "CMS-style blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarasg89/night-and-blog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Sara Seoane Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarasg89/night-and-blog/issues"
+  },
+  "homepage": "https://github.com/sarasg89/night-and-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express-handlebars": "^7.0.4",
+    "express-session": "^1.17.3",
+    "jest": "^29.5.0",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.30.0"
+  }
+}

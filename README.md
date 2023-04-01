@@ -1,4 +1,5 @@
-#
+# Blog Site
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
@@ -26,6 +27,7 @@ I have built a CMS-Style blog site similar to a Wordpress site, where users can 
 
 NPM packages used:
 
+- [Express](https://www.npmjs.com/package/express)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [Sequelize](https://www.npmjs.com/package/sequelize)
 - [Express Handlebars](https://www.npmjs.com/package/express-handlebars)

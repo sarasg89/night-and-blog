@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const blogData = await BlogPost.findAll({
-            include: [{ model:User }],
+            include: [{ model: User }],
         });
         const posts = blogData.map((post) =>
             post.get({ plain: true })
@@ -22,6 +22,24 @@ router.get('/', async (req, res) => {
     }
 })
 
+// GET one blog post
+router.get('/blogpost/:id', async (req, res) => {
+    try {
+        const blogpostData = await BlogPost.findByPk(req.params.id);
+        if (!blogpostData) {
+            res.status(404).json({ message: 'No post with this id!' });
+            return;
+        }
+        const post = blogpostData.get({ plain: true });
+        res.render('edit-blogpost', {
+            post,
+            loggedIn: req.session.loggedIn,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    };
+})
+
 // GET the user's blog post for the dashboard
 // Prevent non logged in users from viewing the dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -29,7 +47,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
         const blogData = await BlogPost.findAll({
             where: {
                 user_id: req.session.user_id,
-            }
+            },
+            include: [{ model: User }],
         })
         const posts = blogData.map((post) =>
             post.get({ plain: true })
@@ -58,13 +77,13 @@ router.get('/login', (req, res) => {
 // Logout route
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
-      // Remove the session variables
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
+        // Remove the session variables
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
     } else {
-      res.status(404).end();
+        res.status(404).end();
     }
-  });
+});
 
 module.exports = router;

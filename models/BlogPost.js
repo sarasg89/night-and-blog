@@ -28,7 +28,7 @@ BlogPost.init(
             defaultValue: DataTypes.NOW,
         },
         post_text: {
-            type: DataTypes.TEXT,
+            type: DataTypes.TEXT(),
             allowNull: false,
         },
     },

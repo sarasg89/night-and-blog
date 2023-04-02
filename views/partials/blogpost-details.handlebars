@@ -5,7 +5,9 @@
         </div>
         <div class="card-body">
             <p class="card-text">{{ post_text }}</p>
+            {{#if loggedIn}}
             <button type="button" class="btn btn-outline-danger">Read comments</button>
+            {{/if}}
         </div>
         <div class="card-footer bg-transparent border-success">Posted by {{user.username}} on {{format_date created_date}}
         </div>

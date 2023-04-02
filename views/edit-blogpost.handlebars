@@ -1,0 +1,22 @@
+<div class="container text-center">
+    <div class="edit-blogpost-container card text-center text-bg-light mb-3">
+        <form class="edit-blogpost-form">
+            <div class="card-header">
+                <h3>Update your post</h3>
+            </div>
+            <div class="m-3">
+                <label class="form-label" for="title">Title</label>
+                <input id="title" class="form-control" name="title" value="{{post.title}}">
+            </div>
+            <div class="m-3">
+                <label class="form-label" for="post_text">Text</label>
+                <textarea id="post_text" class="form-control" name="post_text">{{post.post_text}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3" value="submit">Update</button>
+            <input id="post_id" type="hidden" value="{{post.id}}">
+        </form>
+    </div>
+</div>
+
+
+<script src="/js/edit-post.js"></script>

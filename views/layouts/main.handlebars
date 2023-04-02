@@ -15,7 +15,7 @@
 
   <nav class="navbar bg-body-tertiary">
     <a class="navbar-brand p-3" href="/" style="font-family: 'Caveat', cursive;">
-      <h1 class="display-3">Welcome to Paddy's Pub</h1>
+      <h1 class="display-3 text-success">Welcome to Paddy's Pub</h1>
     </a>
     <ul class="nav nav-underline justify-content-end p-3 fs-4">
       <li class="nav-item">
@@ -35,13 +35,11 @@
   </nav>
 
   <main class="container m-3 row">
-    <aside class="col-3">
-      <h2>Sup Jabroni!</h2>
-    </aside>
-    <div class="col-9 ps-5">
-      {{{ body }}}
-    </div>
+
+    {{{ body }}}
+
   </main>
+  
   {{#if loggedIn}}
   <script src="../../public/js/logout.js"></script>
   {{/if}}

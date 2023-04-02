@@ -13,7 +13,7 @@
     "url": "git+https://github.com/sarasg89/night-and-blog.git"
   },
   "keywords": [
-    "blog"
+    "blog, handlebars, javascript, express, sequelize"
   ],
   "author": "Sara Seoane Garcia",
   "license": "MIT",

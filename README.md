@@ -25,6 +25,8 @@ I have built a CMS-Style blog site similar to a Wordpress site, where users can 
 
 ## Credits
 
+The theme of my blog site is based on the tv show It's Always Sunny in Philadelphia
+
 NPM packages used:
 
 - [Express](https://www.npmjs.com/package/express)

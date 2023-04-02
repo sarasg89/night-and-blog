@@ -8,9 +8,15 @@ router.get('/', async (req, res) => {
         const blogData = await BlogPost.findAll({
             include: [{ model: User }],
         });
-        const posts = blogData.map((post) =>
-            post.get({ plain: true })
-        );
+        // const posts = blogData.map((post) =>
+        //     post.get({ plain: true })
+        // );
+        const posts = [];
+        for (let i = 0; i < blogData.length; i++) {
+            posts.push(blogData[i].get({ plain:true }));
+            posts[i].loggedIn = req.session.loggedIn;
+        }
+
         res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn,

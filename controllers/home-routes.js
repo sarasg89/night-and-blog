@@ -5,8 +5,8 @@ const withAuth = require('../utils/auth');
 // GET all the blog posts for the homepage
 router.get('/', async (req, res) => {
     try {
-        const dbBlogData = await BlogPost.findAll();
-        const posts = dbBlogData.map((post) =>
+        const blogData = await BlogPost.findAll();
+        const posts = blogData.map((post) =>
             post.get({ plain: true })
         );
         res.render('homepage', {
@@ -24,16 +24,21 @@ router.get('/', async (req, res) => {
 // Prevent non logged in users from viewing the dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
+        console.log(req.session)
         const blogData = await BlogPost.findAll({
-
+            where: {
+                user_id: req.session.user_id,
+            }
         })
-        const posts = blogData.get({ plain: true });
-        console.log(req.session);
+        const posts = blogData.map((post) =>
+            post.get({ plain: true })
+        );
 
         res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
         });
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

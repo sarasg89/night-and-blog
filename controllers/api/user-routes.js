@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
 
     if (!dbUserData) {
       res
-        .status(401)
+        .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
@@ -47,6 +47,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
 
       res

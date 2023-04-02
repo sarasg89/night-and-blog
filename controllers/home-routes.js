@@ -24,7 +24,6 @@ router.get('/', async (req, res) => {
 // Prevent non logged in users from viewing the dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
-        console.log(req.session)
         const blogData = await BlogPost.findAll({
             where: {
                 user_id: req.session.user_id,

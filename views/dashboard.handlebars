@@ -1,5 +1,38 @@
-<div class="col-9 ps-5">
-    {{#each posts as |blogpost|}}
-    {{> blogpost-details}}
-    {{/each}}
+<div class="container text-center">
+    {{!-- View posts for this user --}}
+    <div class="col mb-5">
+        {{#each posts as |blogpost|}}
+        {{> blogpost-details}}
+        {{/each}}
+    </div>
+
+    {{!-- Button to create a new post
+    <div class="row align-items-center mb-5">
+        <div class="col">
+            <button type="submit" class="btn btn-primary" id="new-post">New post</button>
+        </div>
+    </div> --}}
+
+    {{!-- Form to submit a new post --}}
+    <div class="new-blogpost-container card text-center text-bg-light mb-3">
+        <form class="new-blogpost-form">
+            <div class="card-header">
+                <h3>New post</h3>
+            </div>
+            <div class="m-3">
+                <label class="form-label" for="title">Title</label>
+                <input id="title" class="form-control" name="title">{{title}}
+            </div>
+            <div class="m-3">
+                <label class="form-label" for="post_text">Text</label>
+                <textarea id="post_text" class="form-control" name="post_text">
+      {{description}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3" value="submit">
+                Submit
+            </button>
+        </form>
+    </div>
 </div>
+
+<script src="/js/add-post.js"></script>

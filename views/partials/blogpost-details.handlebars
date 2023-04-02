@@ -1,7 +1,13 @@
-<section class="container">
-    <div class="blogpost-details">
-        <h3 class="blogpost-title">{{title}}</h3>
-        <h4>Posted by {{user_id}} on {{created_date}}</h4>
-        <p>{{ post_text }}</p>
+<section>
+    <div class="card border-dark text-center text-bg-light mb-3">
+        <div class="card-header">
+            <h3>{{title}}</h3>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ post_text }}</p>
+            <button type="button" class="btn btn-outline-danger">Read comments</button>
+        </div>
+        <div class="card-footer bg-transparent border-success">Posted by {{user_id}} on {{format_date created_date}}
+        </div>
     </div>
 </section>

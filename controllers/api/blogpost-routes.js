@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { BlogPost } = require('../../models');
+const { BlogPost, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // CREATE new blogpost
 router.post('/', async (req, res) => {
@@ -55,5 +56,42 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// GET comment for a blogpost
+router.get('/comments/:id', withAuth, async (req, res) => {
+  try {
+    const blogData = await BlogPost.findAll({
+      where: {
+        id: req.params.id,
+      },
+      include: [{ model: User }, { model: Comment }],
+    })
+    const commentData = await Comment.findAll({
+      where: {
+        post_id: req.params.id,
+      },
+      include: [{ model: User }],
+    })
+
+    const posts = blogData.map((post) =>
+      post.get({ plain: true })
+    );
+
+    const comments = commentData.map((comment) =>
+      comment.get({ plain: true })
+    );
+
+    console.log(posts[0].comments[0])
+    res.render('view-post', {
+      post: posts[0],
+      comments,
+      loggedIn: req.session.loggedIn,
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;

@@ -1,0 +1,25 @@
+<div class="col-9 ps-5">
+    <section>
+        <div class="card border-dark text-center text-bg-light mb-3">
+            <div class="card-header">
+                <h3>{{post.title}}</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ post.post_text }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">Posted by {{post.user.username}} on {{format_date
+                post.created_date}}
+            </div>
+        </div>
+        {{#each comments as |comment|}}
+        <div class="card border-dark text-center text-bg-light mb-3">
+            <div class="card-body">
+                <p class="card-text">{{ comment.comment_text }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">Posted by {{user.username}} on {{format_date
+                comment.created_date}}
+            </div>
+        </div>
+        {{/each}}
+    </section>
+</div>

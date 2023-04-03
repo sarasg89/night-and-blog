@@ -8,7 +8,7 @@
                 <p class="card-text">{{ post.post_text }}</p>
             </div>
             <div class="card-footer bg-transparent border-success">Posted by {{post.user.username}} on {{format_date
-                post.created_date}}
+                post.created_date}} at {{format_time post.created_date}}
             </div>
         </div>
         {{#each comments as |comment|}}
@@ -17,9 +17,26 @@
                 <p class="card-text">{{ comment.comment_text }}</p>
             </div>
             <div class="card-footer bg-transparent border-success">Posted by {{user.username}} on {{format_date
-                comment.created_date}}
+                comment.created_date}} at {{format_time comment.created_date}}
             </div>
         </div>
         {{/each}}
     </section>
+
+    {{!-- Form to submit a new comment --}}
+    <div class="new-comment-container card text-center text-bg-light mb-3">
+        <form class="new-comment-form">
+            <div class="card-header">
+                <h5>Add a comment to this post</h5>
+            </div>
+            <div class="m-3">
+                <textarea id="comment_text" class="form-control" name="comment_text">{{description}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3" value="submit">
+                Submit
+            </button>
+        </form>
+    </div>
 </div>
+
+<script src="/js/add-comment.js"></script>

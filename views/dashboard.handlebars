@@ -11,10 +11,10 @@
                     <p class="card-text">{{ post_text }}</p>
                 </div>
                 <div class="card-footer bg-transparent border-success">Posted by {{user.username}} on {{format_date
-                    created_date}}
+                    created_date}} at {{format_time created_date}}
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                    <button type="button" class="btn btn-outline-danger">Read comments</button>
+                    <a type="button" class="btn btn-outline-danger" href="/api/blogpost/comments/{{id}}">Read comments</a>
                     <a type="button" class="btn btn-outline-danger" href="/blogpost/{{id}}">Update post</a>
                     <button type="button" class="delete-btn btn btn-outline-danger" data-id="{{id}}">Delete post</button>
                 </div>

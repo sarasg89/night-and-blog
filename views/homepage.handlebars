@@ -14,13 +14,14 @@
             <div class="card-body">
                 <p class="card-text">{{ post_text }}</p>
                 {{#if loggedIn}}
-                <button type="button" class="btn btn-outline-danger">Read comments</button>
+                <a type="button" class="btn btn-outline-danger" href="/api/blogpost/comments/{{id}}">Read comments</a>
                 {{/if}}
             </div>
             <div class="card-footer bg-transparent border-success">Posted by {{user.username}} on {{format_date
-                created_date}}
+                created_date}} at {{format_time created_date}}
             </div>
         </div>
     </section>
     {{/each}}
 </div>
+

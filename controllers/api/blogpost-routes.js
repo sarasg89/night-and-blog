@@ -92,6 +92,22 @@ router.get('/comments/:id', withAuth, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
+
+// CREATE a new comment on a blogpost
+router.post('/comments', withAuth, async (req, res) => {
+  try {
+    const newCommentData = await Comment.create({
+      user_id: req.session.user_id,
+      post_id: req.body.post_id,
+      comment_text: req.body.comment_text,
+    })
+    res.status(200).json(newCommentData);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

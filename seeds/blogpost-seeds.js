@@ -3,8 +3,8 @@ const { BlogPost } = require('../models');
 const postData = [
     {
         user_id: '1',
-        title: 'Hello, world!',
-        post_text: 'This is the first blogpost in a series of posts! I hope that this blog grows to contain a large amount of useful and engaging content. Dee\'s a bird.',
+        title: 'Have you seen this man?',
+        post_text: 'This man assaulted us, he sushed at us. He has a nose that is annoying, a nose that you would want to smack',
     },
     {
         user_id: '2',
@@ -20,6 +20,11 @@ const postData = [
         user_id: '4',
         title: 'Ratbashing - a methodology.',
         post_text: "Hey. So. Ratbashing. You're going to want to get yourself a nice, big baseball bat. NEXT you're going to need some protective clothing - rats are wily and aggressive when cornered.. Last thing you want is a face full of tetanus whilst trying to deal with your rodent problemos LOL",
+    },
+    {
+        user_id: '5',
+        title: 'Fight milk',
+        post_text: "Are you ready for the best idea ever? You got money? You want even more money? We got a great idea for you! The first alcoholic, dairy-based protein drink for bodyguards by bodyguards. Drink it every morning so you can fight like a crow! CAW CAW",
     },
 ];
 

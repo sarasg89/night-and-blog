@@ -8,18 +8,27 @@ I have built a CMS-Style blog site similar to a Wordpress site, where users can 
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Deployment](#deployment)
 - [Credits](#credits)
 - [License](#license)
 
-## Installation
-
-## Usage
-
 ### Screenshots
+
+Home page before logging in
+![Homepage](./public/images/homepage%201.png)
+
+Log in / Sign up page
+![Log in / Sign up page](./public/images/login%3Asignup.png)
+
+User's dashboard
+![Dashboard](./public/images/dashboard.png)
+
+Home page after logging in
+![Homepage](./public/images/homepage%202.png)
+
+Comments view
+![Comments](./public/images/comments.png)
 
 ## Deployment
 

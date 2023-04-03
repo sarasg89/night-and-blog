@@ -1,5 +1,6 @@
 <div class="col-9 ps-5">
     <section>
+        {{!-- View a post --}}
         <div class="card border-dark text-center text-bg-light mb-3">
             <div class="card-header">
                 <h3>{{post.title}}</h3>
@@ -11,8 +12,9 @@
                 post.created_date}} at {{format_time post.created_date}}
             </div>
         </div>
+        {{!-- View comments for this post --}}
         {{#each comments as |comment|}}
-        <div class="card border-dark text-center text-bg-light mb-3">
+        <div class="card border-dark text-center mb-3" style="background-color: #6620c997">
             <div class="card-body">
                 <p class="card-text">{{ comment.comment_text }}</p>
             </div>
